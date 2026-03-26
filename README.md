@@ -98,8 +98,3 @@ The presentation follows a **game-like structure** to make it engaging:
 ## 🧠 Conclusion
 
 This project showcases the complete workflow of a data analyst — from raw data to insights and storytelling. It highlights technical skills along with the ability to communicate results effectively.
-
----
-## 🔥 (For Firefly / Recruit Version Tagline)
-
-**“Turning raw data into powerful insights through analytics, visualization, and storytelling.”**
