@@ -1,100 +1,91 @@
-# customer_behaviour_analysis
-data analytics project showcasing customer behaviour analysis using python, sql and power Bi
-## Data Analytics Project (End-to-End)
----
-## 🌟 Project Overview
+# Customer Behaviour Analysis
 
-This project demonstrates a complete **data analytics pipeline** starting from raw data to final business insights. It covers data loading, cleaning, analysis using SQL, visualization, and presentation.
+![Python](https://img.shields.io/badge/Python-3.11+-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-013243)
+![SQL](https://img.shields.io/badge/SQL-Analytics-4479A1)
+![Power%20BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-The goal is to extract meaningful insights and present them in a clear, engaging, and structured way.
+End-to-end customer shopping behavior analytics project using Python, SQL, and Power BI.
 
----
-## 📂 Dataset
+## Problem Statement
 
-* The dataset is loaded using Python (Pandas).
-* It contains structured data suitable for analysis (e.g., customer behavior / sales / transactions).
-* Initial checks include:
+Retail teams need to understand revenue drivers, customer segments, purchase frequency, product preferences, and promotion behavior. This project analyzes customer shopping data to identify category-level performance, customer segments, and business insights that can support merchandising and marketing decisions.
 
-  * Data types
-  * Missing values
-  * Duplicate records
+## Dataset / Source
 
----
-## ⚙️ Steps Involved
-### 1. Data Loading (Python)
+The dataset is stored in `data/customer_shopping_behavior.csv` and contains customer demographics, product categories, purchase amount, location, season, discount usage, previous purchases, and payment behavior.
 
-* Import dataset using Pandas
-* Display first few rows
-* Understand structure and columns
+## Tech Stack
 
----
-### 2. Data Cleaning (Python)
+- Python
+- Pandas
+- NumPy
+- SQL / PostgreSQL
+- Power BI
+- PowerPoint
 
-* Handle missing values
-* Remove duplicates
-* Fix data types
-* Standardize column names
-* Prepare clean dataset for analysis
+## Workflow
 
----
-### 3. Data Storage (PostgreSQL)
+1. Load customer shopping data.
+2. Clean column names and remove duplicates.
+3. Engineer age groups and customer segments.
+4. Run SQL analysis for revenue, products, subscriptions, and repeat buyers.
+5. Build Power BI dashboard views.
+6. Summarize insights in reports and presentation artifacts.
 
-* Connect Python to PostgreSQL
-* Create tables
-* Upload cleaned dataset into database
+## Methodology
 
----
-### 4. SQL Analysis (PostgreSQL)
+- Standardized raw CSV column names into snake_case.
+- Created age groups and customer segments based on previous purchases.
+- Used SQL aggregation and window functions for business questions.
+- Prepared dashboard artifacts for executive-style reporting.
 
-* Run queries to extract insights:
+## Key Features
 
-  * Aggregations (SUM, AVG, COUNT)
-  * Grouping and filtering
-  * Joins (if multiple tables)
-* Generate meaningful results for business understanding
+- Revenue by category
+- Subscription vs spending
+- Discount behavior
+- Customer segmentation
+- Top products per category
+- Power BI dashboard artifact
 
----
-### 5. Dashboard Creation (Power BI)
+## Results / Insights
 
-* Connect Power BI to PostgreSQL / dataset
-* Create visualizations:
+- Category-level revenue helps identify high-performing product groups.
+- Previous purchases can segment customers into new, returning, and loyal groups.
+- Subscription and discount usage can be compared against total revenue and average spend.
 
-  * Bar charts
-  * Line graphs
-  * KPIs
-* Design an interactive dashboard
+## Screenshots
 
----
-### 6. Presentation (Game-Style PPT)
+Add exported Power BI screenshots to `screenshots/`.
 
-The presentation follows a **game-like structure** to make it engaging:
+## How to Run Locally
 
-#### 🎮 Sections:
+```bash
+pip install -r requirements.txt
+pytest -q
+```
 
-1. **Overview** – What the project is about
-2. **Dataset** – Description of data
-3. **Challenge** – Problem statement
-4. **Steps** – Process followed
-5. **Insights** – Key findings
-6. **Dashboard** – Visual outputs
-7. **Conclusion** – Final takeaways
----
-## 🎯 Key Outcomes
+SQL queries are available in `src/customer_analysis.sql`.
 
-* Clean and structured dataset
-* SQL-based analytical insights
-* Interactive Power BI dashboard
-* Engaging presentation
+## Folder Structure
 
----
-## 🚀 Tools Used
+```text
+.
+├── data/
+├── docs/
+├── reports/
+├── screenshots/
+├── src/
+├── tests/
+├── README.md
+└── requirements.txt
+```
 
-* Python (Pandas)
-* PostgreSQL
-* Power BI
-* PowerPoint
+## Future Improvements
 
----
-## 🧠 Conclusion
-
-This project showcases the complete workflow of a data analyst — from raw data to insights and storytelling. It highlights technical skills along with the ability to communicate results effectively.
+- Add an automated Python EDA notebook.
+- Export cleaned data for Power BI.
+- Add churn or repeat-purchase prediction if a suitable target is defined.
