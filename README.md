@@ -4,79 +4,89 @@
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458)
 ![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-013243)
 ![SQL](https://img.shields.io/badge/SQL-Analytics-4479A1)
-![Power%20BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811)
+![Power%20BI](https://img.shields.io/badge/Power%20BI-Report-F2C811)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-End-to-end customer shopping behavior analytics project using Python, SQL, and Power BI.
+Retail analytics case study using Python, SQL, Streamlit, and Power BI artifacts to analyze customer shopping behavior and revenue patterns.
 
 ## Problem Statement
 
-Retail teams need to understand revenue drivers, customer segments, purchase frequency, product preferences, and promotion behavior. This project analyzes customer shopping data to identify category-level performance, customer segments, and business insights that can support merchandising and marketing decisions.
+Retail teams need to understand which product categories, customer segments, seasons, and purchase behaviors drive revenue. This project analyzes customer shopping data to identify business insights that can support merchandising, marketing, and customer retention decisions.
 
-## Dataset / Source
+## Dataset
 
-The dataset is stored in `data/customer_shopping_behavior.csv` and contains customer demographics, product categories, purchase amount, location, season, discount usage, previous purchases, and payment behavior.
+The dataset is stored in `data/customer_shopping_behavior.csv` and includes customer demographics, product category, purchase amount, location, season, subscription status, discount usage, previous purchases, payment method, and purchase frequency.
 
-## Tech Stack
+## Tools
 
 - Python
-- Pandas
-- NumPy
-- SQL / PostgreSQL
-- Power BI
-- PowerPoint
+- Pandas and NumPy
+- Matplotlib and Seaborn
+- SQL
+- Streamlit
+- Power BI (`reports/customer_behavior_dashboard.pbix`)
+- Pytest
 
 ## Workflow
 
-1. Load customer shopping data.
-2. Clean column names and remove duplicates.
-3. Engineer age groups and customer segments.
-4. Run SQL analysis for revenue, products, subscriptions, and repeat buyers.
-5. Build Power BI dashboard views.
-6. Summarize insights in reports and presentation artifacts.
+1. Load the customer shopping dataset.
+2. Standardize column names into snake_case.
+3. Remove duplicate records and validate purchase amount values.
+4. Engineer customer segments from previous purchase counts.
+5. Analyze revenue by category, season, location, subscription status, and purchase frequency.
+6. Present insights through Streamlit, SQL queries, and existing Power BI/report artifacts.
 
-## Methodology
+## Key Insights
 
-- Standardized raw CSV column names into snake_case.
-- Created age groups and customer segments based on previous purchases.
-- Used SQL aggregation and window functions for business questions.
-- Prepared dashboard artifacts for executive-style reporting.
+- Category-level revenue highlights the strongest merchandise groups.
+- Customer segmentation separates new, returning, and loyal shoppers for targeted marketing.
+- Subscription status and discount usage can be compared against average purchase amount.
+- Seasonal revenue patterns can guide campaign timing and inventory planning.
 
-## Key Features
+More details are available in [`reports/insights.md`](reports/insights.md).
 
-- Revenue by category
-- Subscription vs spending
-- Discount behavior
-- Customer segmentation
-- Top products per category
-- Power BI dashboard artifact
+## Business Impact
 
-## Results / Insights
+The project translates raw transaction data into business questions a retail team can use: which categories perform best, which customer groups are more valuable, and how purchasing behavior changes across season, discount usage, and subscription status.
 
-- Category-level revenue helps identify high-performing product groups.
-- Previous purchases can segment customers into new, returning, and loyal groups.
-- Subscription and discount usage can be compared against total revenue and average spend.
+## Dashboard Screenshot
 
-## Screenshots
+![Customer Streamlit dashboard](screenshots/streamlit-dashboard-overview.png)
 
-Add exported Power BI screenshots to `screenshots/`.
+## Power BI / Report Artifacts
 
-## How to Run Locally
+This repository includes actual report artifacts:
+
+- `reports/customer_behavior_dashboard.pbix`
+- `reports/Customer Shopping Behavior Analysis.pdf`
+- `reports/Customer-Shopping-Behavior-Analysis.pptx`
+- `reports/Business Problem Document.pdf`
+
+## How to Run
 
 ```bash
 pip install -r requirements.txt
+streamlit run app.py
+```
+
+Run tests:
+
+```bash
 pytest -q
 ```
 
-SQL queries are available in `src/customer_analysis.sql`.
+SQL queries are available in [`src/customer_analysis.sql`](src/customer_analysis.sql).
 
 ## Folder Structure
 
 ```text
 .
+├── app.py
 ├── data/
 ├── docs/
 ├── reports/
+│   └── insights.md
 ├── screenshots/
 ├── src/
 ├── tests/
@@ -84,8 +94,9 @@ SQL queries are available in `src/customer_analysis.sql`.
 └── requirements.txt
 ```
 
-## Future Improvements
+## Future Scope
 
-- Add an automated Python EDA notebook.
-- Export cleaned data for Power BI.
-- Add churn or repeat-purchase prediction if a suitable target is defined.
+- Add Power BI exported dashboard screenshots.
+- Add cohort analysis if transaction dates become available.
+- Add customer lifetime value modeling if longitudinal purchase data is added.
+- Build repeat-purchase prediction if a clear target variable is defined.
